@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Products.API.Entities;
 using Products.API.Services;
 
@@ -12,10 +11,6 @@ public class ProductController(IProductService _productService) : ControllerBase
     public async Task<IActionResult> Get(CancellationToken cancellationToken)
     {
         var products = await _productService.GetProducts(cancellationToken);
-        if (products == null)
-        {
-            return NotFound();
-        }
 
         return Ok(products);
     }
@@ -33,9 +28,14 @@ public class ProductController(IProductService _productService) : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Post([FromBody] Product product, CancellationToken cancellationToken)
+    public async Task<IActionResult> Post([FromBody] Product product, CancellationToken cancellationToken)
     {
-        var success = _productService.CreateProduct(product, cancellationToken);
+        var success = await _productService.CreateProduct(product, cancellationToken);
+        if (!success)
+        {
+            return BadRequest();
+        }
+
         return NoContent();
     }
 
