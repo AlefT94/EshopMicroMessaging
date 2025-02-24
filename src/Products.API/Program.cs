@@ -1,6 +1,5 @@
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Products.API.Bus;
 using Products.API.Data;
 using Products.API.Data.Repositoty;
