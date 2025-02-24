@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Inventory.API.Entities;
 
-public class Inventory
+public class InventoryItem
 {
     public Guid Id { get; private set; }
     public Guid ProductId { get; private set; }
@@ -15,7 +15,7 @@ public class Inventory
     [NotMapped]
     public decimal QuantityAvaliable => Quantity-QuantityReserve;
 
-    private Inventory(Guid productId, string productName)
+    private InventoryItem(Guid productId, string productName)
     {
         ProductId = productId;
         ProductName = productName;
@@ -80,8 +80,8 @@ public class Inventory
         return Result.Ok();
     }
 
-    public static Inventory Create(Guid productId, string productName)
+    public static InventoryItem Create(Guid productId, string productName)
     {
-        return new Inventory(productId, productName);
+        return new InventoryItem(productId, productName);
     }
 }
