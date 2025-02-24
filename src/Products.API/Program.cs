@@ -2,7 +2,7 @@ using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Products.API.Bus;
 using Products.API.Data;
-using Products.API.Data.Repositoty;
+using Products.API.Data.Repository;
 using Products.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);

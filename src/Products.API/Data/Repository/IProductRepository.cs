@@ -1,6 +1,6 @@
 ﻿using Products.API.Entities;
 
-namespace Products.API.Data.Repositoty;
+namespace Products.API.Data.Repository;
 
 public interface IProductRepository
 {

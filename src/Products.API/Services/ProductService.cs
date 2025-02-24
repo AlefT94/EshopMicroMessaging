@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Products.API.Bus;
 using Products.API.Data;
-using Products.API.Data.Repositoty;
+using Products.API.Data.Repository;
 using Products.API.Entities;
 using Shared.Library.Events.Products;
 

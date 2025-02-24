@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Products.API.Entities;
 
-namespace Products.API.Data.Repositoty;
+namespace Products.API.Data.Repository;
 
 public class ProductRepository : IProductRepository
 {

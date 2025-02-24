@@ -3,7 +3,7 @@ using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using Products.API.Bus;
 using Products.API.Data;
-using Products.API.Data.Repositoty;
+using Products.API.Data.Repository;
 using Products.API.Services;
 
 namespace Product.API.Test.Services;
