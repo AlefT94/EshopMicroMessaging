@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  messagebroker:
+    image: rabbitmq:management
+
+  products.api:
+    image: ${DOCKER_REGISTRY-}productsapi
+    build:
+      context: .
+      dockerfile: src/Products.API/Dockerfile
