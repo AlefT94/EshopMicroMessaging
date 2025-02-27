@@ -1,4 +1,5 @@
 using Inventory.API.Data;
+using Inventory.API.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,8 @@ builder.Services.AddDbContext<AppDbcontext>(opt =>
 {
     opt.UseSqlite("Data Source=app.db");
 });
+
+builder.Services.AddScoped<IInventoryItemRepository, InventoryItemRepository>();
 
 var app = builder.Build();
 
