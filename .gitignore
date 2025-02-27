@@ -366,3 +366,4 @@ FodyWeavers.xsd
 /src/Products.API/app.db-wal
 /src/Inventory.API/app.db-shm
 /src/Inventory.API/app.db-wal
+/src/Inventory.API/app.db
