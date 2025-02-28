@@ -9,3 +9,9 @@ services:
     build:
       context: .
       dockerfile: src/Products.API/Dockerfile
+  inventory.api:
+    image: ${DOCKER_REGISTRY-}inventoryapi
+    build:
+      context: .
+      dockerfile: src/Inventory.API/Dockerfile
+
